@@ -1,0 +1,52 @@
+consumes:
+- text/plain
+definitions:
+  HelloResponse:
+    properties:
+      message:
+        type: string
+        x-go-name: Message
+    type: object
+    x-go-package: github.com/vaclav-dvorak/go-api-hello-world/api
+host: localhost:8080
+info:
+  contact:
+    email: vaclav.dvorak@github.com
+    name: Vaclav Dvorak
+  description: The purpose of this application is to create simple hello world api
+    and test go-swagger.
+  license:
+    name: MIT
+    url: http://opensource.org/licenses/MIT
+  title: Hello World api
+  version: 0.0.1
+paths:
+  /hello/{name}:
+    get:
+      consumes:
+      - text/plain
+      description: Returns a simple Hello message
+      operationId: Hello
+      parameters:
+      - description: Name to be returned.
+        in: path
+        name: name
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          $ref: '#/responses/helloResponse'
+      tags:
+      - hello
+produces:
+- application/json
+responses:
+  helloResponse:
+    description: The hello message.
+    schema:
+      $ref: '#/definitions/HelloResponse'
+schemes:
+- http
+swagger: "2.0"
