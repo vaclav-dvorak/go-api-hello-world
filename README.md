@@ -29,3 +29,12 @@ You can run swagger with this command
 ```bash
 make serve-swagger
 ```
+
+## 3. Docker
+
+You can build and run this in docker
+
+```bash
+docker build -t go-api-hello-world:0.1.0 .
+docker run -p 8080:8080 go-api-hello-world:0.1.0
+```
