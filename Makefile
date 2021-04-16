@@ -6,3 +6,6 @@ swagger: check-swagger
 
 serve-swagger: check-swagger
 	swagger serve -F=swagger swagger.yaml --no-open
+
+lint:
+	docker run --rm -i hadolint/hadolint < Dockerfile
